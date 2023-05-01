@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -7,5 +5,38 @@
 </head>
 <body>
     <h1>Bienvenido a mi página, <span th:text="${nombre}"></span>!</h1>
+    <!-- Modal para agregar bicicleta -->
+    <a href="#" class="btn btn-primary my-3" data-toggle="modal" data-target="#addBikeModal">Agregar bicicleta</a>
+
+<div class="modal fade" id="addBikeModal" tabindex="-1" role="dialog" aria-labelledby="addBikeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addBikeModalLabel">Agregar bicicleta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="#" th:action="@{/bicicletas}" th:object="${bicicleta}" method="post">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="marca">Marca</label>
+              <input type="text" class="form-control" id="marca" name="marca" th:field="*{marca}" required>
+            </div>
+            <div class="form-group">
+              <label for="modelo">Modelo</label>
+              <input type="text" class="form-control" id="modelo" name="modelo" th:field="*{modelo}" required>
+            </div>
+            <!-- Puedes agregar un campo para seleccionar el cliente asociado a la bicicleta aquí -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
 </body>
-</html>
+</htm

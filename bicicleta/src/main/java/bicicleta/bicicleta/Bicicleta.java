@@ -30,6 +30,11 @@ public class Bicicleta {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+    public Object getCliente() {
+        return null;
+    }
+    public void setCliente(Object cliente) {
+    }
     
     
 
